@@ -1,0 +1,215 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    position: relative;
+    background-image: url("img/bg.png");
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90vh;
+    background-size: cover;
+    padding: 40px 50px 0;
+}
+
+.main__menu {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.main__burger {
+    border-top: solid 1px black;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    width: 32px;
+    height: 20px;
+    cursor: pointer;
+    transform: all 2s;
+}
+
+.main__burger::after {
+    content: "";
+    height: 1px;
+    max-width: 23px;
+    background-color: black;
+    margin-top: 6px;
+    display: block;
+}
+
+.main__burger::before {
+    content: "";
+    height: 1px;
+    max-width: 15px;
+    background-color: black;
+    display: block;
+    margin-top: 6px;
+}
+
+.main__burger:hover {
+    width: 36px;
+}
+
+.logo__main {
+    color: #60606e;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 48px;
+    text-transform: uppercase;
+}
+
+.main__agency {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    width: 100%;
+    position: relative;
+}
+
+.header__agenct {
+    border: 10px solid #60606e;
+    padding: 22px 35px;
+    color: #60606e;
+    font-family: "Montserrat";
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 48px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    text-align: center;
+}
+@media (max-width: 540px){
+    .header__agenct{
+
+    font-size: 24px;
+    border: 5px solid #60606e;
+    padding: 11px 17px;
+    }
+}
+.header__agenct::before {
+content: "We're";
+position: absolute;
+ left: 50%;
+ padding-left: 20px; 
+ padding-right: 20px ;
+ max-width: 99px;
+max-height: 30px;
+background-color: #7beec7;
+color: #60606e;
+font-family: "Montserrat";
+font-size: 18px;
+font-weight: 700;
+line-height: 48px;
+text-transform: uppercase;
+transform: translateX(-50%);
+top: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.agency__text{
+color: #60606e;
+font-family: "Open Sans";
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+text-align: center;
+}
+.main__img-text{
+    padding-top: 125px;
+    display: flex;
+    justify-content: space-around;
+}
+@media(max-width: 992px){
+    .main__img-text{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.img-text__img{
+    max-width: 458px;
+    max-height: 400px;
+    margin-right: 127px;
+}
+@media(max-width: 800px){
+    .img-text__img{
+        display: flex;
+        justify-content: center;
+        max-width: 240px;
+        max-height: 200px;
+        flex-grow: 1;
+    }
+}
+.img-text__history{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 27px ;
+   
+}
+.history__agency{
+color: #60606e;
+font-family: "Montserrat";
+font-size: 30px;
+font-weight: 700;
+line-height: 48px;
+text-transform: uppercase;
+margin-bottom: 12px;
+position: relative;
+z-index: 0;
+}
+@media(max-width: 992px){
+    .history__agency{
+        margin-top: 20px;
+        font-size: 20px;
+        text-align: center;
+    }
+}
+.history__agency::before{
+position: absolute;
+content: "";
+z-index: -1;
+width: 67px;
+height: 21px;
+background-color: #7beec7;
+bottom: 0;
+left: 0;
+}
+@media(max-width: 992px){
+    .history__agency::before{
+      max-width: 2px;
+      max-height: 2px;
+    }
+}
+.history__text{
+color: #60606e;
+font-family: "Open Sans";
+font-size: 14px;
+font-weight: 400;
+line-height: 30px;
+}
+.history__button{
+align-self: flex-end;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 20px 40px;
+color: #ffffff;
+font-family: "Montserrat";
+font-size: 14px;
+font-weight: 700;
+text-transform: uppercase;
+background: #7beec7;
+outline: none;
+border: none;
+cursor: pointer;
+margin-top: 47px;
+}
