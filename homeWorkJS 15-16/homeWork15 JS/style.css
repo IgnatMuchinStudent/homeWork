@@ -1,0 +1,11 @@
+* {
+    display: flex;
+    justify-content: center;
+}
+
+.sqaure {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    margin-right: 40px;
+}

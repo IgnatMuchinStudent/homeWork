@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .counter {
+            width: 200px;
+            height: 80px;
+            margin-top: 40px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: olive;
+        }
+    </style>
+    <title>Task 1</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <div class="counter"></div>
+
+    <script>
+        let counter = document.querySelector(".counter");
+        const root = document.getElementById('root');
+        root.style.display = ("flex");
+        root.style.flexWrap = ("wrap");
+        let l = Math.floor(Math.random() * 200);
+        for (let i = 0; i < l; i++) {
+            const el = document.createElement('div');
+
+            el.style.width = '30px';
+            el.style.height = '30px';
+            el.style.backgroundColor = `rgb(${i+40},${i+4},${i+5})`;
+            el.style.marginTop = el.style.marginRight = (10 + "px");
+            el.style.color = "white";
+            el.innerText = i;
+            root.append(el)
+            counter.innerText = Math.max(i);
+        }
+    </script>
+</body>
+
+</html>
