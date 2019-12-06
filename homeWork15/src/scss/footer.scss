@@ -1,0 +1,33 @@
+.footer {
+    width: 100%;
+    height: 100%;
+    padding-top: 93px;
+    display: flex;
+    flex-direction: column;
+    background-color: #262b2e;
+    align-items: center;
+    padding-bottom: 93px;
+    &__heading {
+        opacity: 0.8;
+        color: #ffffff;
+        font-family: Raleway;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25px;
+        text-transform: uppercase;
+    }
+    &__img {
+        margin-top: 19px;
+        max-width: 205px;
+        max-height: 40px;
+    }
+    &__text {
+        margin-top: 43px;
+        opacity: 0.4;
+        color: #ffffff;
+        font-family: Raleway;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 25px
+    }
+}

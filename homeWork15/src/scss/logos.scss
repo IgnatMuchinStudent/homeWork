@@ -1,0 +1,16 @@
+.logos {
+    height: 100%;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 108px 0;
+    max-width: 1133px;
+    &__main {
+        display: flex;
+        @media (max-width: 1000px) {
+            flex-direction: column;
+        }
+    }
+}

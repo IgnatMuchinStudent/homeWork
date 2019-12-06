@@ -1,0 +1,90 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    flex-direction: column;
+    .header {
+        padding-top: 100px;
+        background: #eff0f2;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 129px;
+        &__menu {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            &__logo {
+                width: 116px;
+                height: 46px;
+            }
+            &__burg {
+                display: flex;
+                flex-direction: column;
+                width: 30px;
+                border-top: 4px solid #000000;
+            }
+             ::before {
+                content: "";
+                width: 30px;
+                height: 4px;
+                border-radius: 2px;
+                background-color: hsl(0, 0%, 0%);
+                margin-bottom: 5px;
+                margin-top: 5px;
+            }
+             ::after {
+                content: "";
+                width: 30px;
+                height: 4px;
+                border-radius: 2px;
+                background-color: hsl(0, 0%, 0%);
+                margin-bottom: 5px;
+            }
+        }
+        &__text {
+            margin-top: 243px;
+            text-align: center;
+            text-shadow: 4px 8px 10px rgba(0, 0, 0, 0.24);
+            color: #505050;
+            font-family: 'Montserrat';
+            font-size: 45px;
+            font-weight: 700;
+            line-height: 35px;
+            text-transform: uppercase;
+            &__blue {
+                max-width: 255px;
+                max-height: 54px;
+                background-color: #76f4ea;
+                @media (max-width: 770px) {
+                    display: none;
+                }
+            }
+        }
+        &__button-img {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            &__button {
+                margin-top: 150px;
+                background: none;
+                padding: 20px 48px;
+                border-radius: 2px;
+                border: 2px solid #000000;
+                justify-items: center;
+            }
+            &__img {
+                max-width: 77px;
+                max-height: 84px;
+                margin-top: 196px;
+                background-image: url("img/but.png");
+            }
+        }
+    }
+}
