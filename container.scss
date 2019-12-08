@@ -1,0 +1,42 @@
+    $--col: 24;
+    $max-container-width: 1140px;
+    $breakpoint: 768px;
+    $padding-width: 15px;
+    $padding-m-width: 5px;
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .container {
+            width: 100%;
+            height: 100vh;
+            max-width: ($max-container-width);
+            display: flex;
+            @for $i from 1 through $--col {
+                .col-#{$i} {
+                    width: 100%/ $--col * $i;
+                    padding-left: $padding-width;
+                    padding-right: ($padding-width);
+                    @media(max-width: $breakpoint) {
+                        padding-left: ($padding-m-width);
+                        padding-right: ($padding-m-width);
+                    }
+                }
+                @media(max-width: ( $breakpoint)) {
+                    .col-m-#{$i} {
+                        width: 100%/( $--col) * $i;
+                    }
+                }
+            }
+            @for $i from 0 through ( $--col) {
+                .offset-#{$i} {
+                    margin-left: 100%/( $--col)*$i;
+                }
+                @media(max-width:( $breakpoint)) {
+                    .offset-m-#{$i} {
+                        margin-left: 100%/( $--col)*$i;
+                    }
+                }
+            }
+        }
+    }
