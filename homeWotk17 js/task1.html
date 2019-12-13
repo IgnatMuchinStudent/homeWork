@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    button {
+        border: solid 3px white;
+        width: 120px;
+        height: 60px;
+        margin: 100px;
+    }
+
+    .red {
+        background-color: red;
+    }
+
+    .blue {
+        background-color: blue;
+    }
+
+    .green {
+        background-color: green;
+    }
+</style>
+
+<body>
+    <button class="red">red</button>
+    <button class="blue">blue</button>
+    <button class="green">green</button>
+    <script>
+        let body = document.querySelector('body');
+        let buttons = document.querySelectorAll('button');
+        for (i = 0; i <= buttons.length; i++) {
+            buttons[0].addEventListener('click', function(){
+                body.style.backgroundColor = buttons[0].textContent
+            });
+            buttons[1].addEventListener('click', function(){
+                body.style.backgroundColor = buttons[1].textContent
+            });
+            buttons[2].addEventListener('click', function(){
+                body.style.backgroundColor = buttons[2].textContent
+            });
+    }
+    </script>
+</body>
+
+</html>

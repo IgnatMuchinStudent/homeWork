@@ -1,0 +1,55 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: aqua;
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+form{
+display: flex;
+justify-content: space-between;
+}
+p{
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+input{
+    margin-top: 10px;
+}
+.wrapper{
+    display: flex;
+    max-width: 500px;
+height: 100%;
+overflow: hidden;
+}
+.wrapper__slider{
+    max-width: 5000px;
+    height: 100%;
+    display: flex;
+}
+.questons{
+    width: 500px;
+    font-size: 20px;
+}
+.button__end{
+    display: flex;
+    justify-content: space-around;
+}
+.button{
+    margin: 0;
+    padding: 20px;
+ background: none;
+ color: white;
+ font-size: 30px;
+ border: 2px solid white;
+}
+.end{padding: 20px;
+    background: none;
+    color: white;
+    font-size: 30px;
+    border: 2px solid white;
+    margin-left: 40px;
+}

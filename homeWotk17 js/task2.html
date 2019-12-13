@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    button {
+        width: 120px;
+        height: 60px;
+        margin: 50px;
+    }
+</style>
+
+<body>
+    <button class="add">add</button>
+    <button class="remove">remove</button>
+    <ul>
+    </ul>
+    <script>
+        let current=0;
+        let $lis = document.querySelectorAll('li').forEach(i=> console.log(i));
+        let $ul = document.querySelector('ul')
+        let $buttonAdd = document.querySelector('.add');
+        let $buttonRem = document.querySelector('.remove');
+            $buttonAdd.addEventListener('click', addLi);
+            $buttonRem.addEventListener('click', function (event) {
+                let remEl = $ul.lastChild.remove()
+            })
+
+        function addLi() {
+            let li = document.createElement('li')
+            li.innerHTML = str_rand()
+            $ul.append(li)
+            current++
+        }
+        function str_rand() {
+        let result       = '';
+        let words        = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';;
+            for( i = 0; i <Math.floor(Math.random()*words.length) ; i++ ) {
+                position = Math.floor ( Math.random() * words.length);
+                result = result + words.substring(position, position + 1);
+            }
+        return result;
+        }
+        current+=current;
+    </script>
+</body>
+
+</html>
