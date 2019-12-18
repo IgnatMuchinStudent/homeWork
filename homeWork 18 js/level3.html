@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        grid-template-rows: 1fr 100px 1fr;
+        grid-template-columns: 1fr 200px  1fr;
+        grid-template-areas: "img0 img1 img2 "
+            "img0 select img2 "
+            "img3 img4 img4 ";
+    }
+   img{
+       overflow: hidden;
+   }
+    select {
+        grid-area: select;
+    }
+
+    .img-0 {
+        grid-area: img0;
+    }
+
+    .img-1 {
+        grid-area: img1;
+    }
+
+    .img-2 {
+        grid-area: img2;
+    }
+
+    .img-3 {
+        grid-area: img3;
+    }
+
+    .img-4 {
+        grid-area: img4;
+    }
+</style>
+
+<body>
+    <select>
+    </select>
+    <img src="" alt="dog" class="img-0">
+    <img src="" alt="dog" class="img-1">
+    <img src="" alt="dog" class="img-2">
+    <img src="" alt="dog" class="img-3">
+    <img src="" alt="dog" class="img-4">
+    <script>
+        async function load() {
+            let select = document.querySelector('select')
+            let responce = await fetch('https://dog.ceo/api/breeds/list/all')
+            let data = await responce.json();
+                        console.log(Array.from(data.message))
+            data.message.forEach(function (element) {
+                console.log(element)
+                let option = document.createElement('option')
+                option.textContent = element;
+                option.value = element;
+                select.append(option);
+            });
+            let search = select.value;
+             let responceI = await fetch('https://dog.ceo/api/breed/'+search+'/images/random/5')
+             let dataI = await responceI.json()
+             console.log(dataI)
+             dataI.message.map((element, index) => {
+                let img = document.querySelectorAll('img');
+                img[index].src = element;
+             }
+             )
+         }
+        load()
+
+
+    </script>
+</body>
+
+</html>
