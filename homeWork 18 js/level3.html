@@ -20,6 +20,8 @@
     }
    img{
        overflow: hidden;
+       width: 100%;
+        height: 100%;
    }
     select {
         grid-area: select;
@@ -27,32 +29,27 @@
 
     .img-0 {
         grid-area: img0;
-        width: 410px;
-        height: 460px;
+        
     }
 
     .img-1 {
-        width: 200px;
-        height: 366px;
+        
         grid-area: img1;
     }
 
     .img-2 {
-        width: 410px;
-        height: 460px;
+       
         grid-area: img2;
     }
 
     .img-3 {
         grid-area: img3;
-        width: 410px;
-        height: 460px;
+       
     }
 
     .img-4 {
         grid-area: img4;
-        width: 610px;
-        height: 360px;
+
     }
 </style>
 
@@ -65,8 +62,9 @@
     <img src="" alt="dog" class="img-3">
     <img src="" alt="dog" class="img-4">
     <script>
+        let select = document.querySelector('select')
         async function load() {
-            let select = document.querySelector('select')
+            
             let responce = await fetch('https://dog.ceo/api/breeds/list/all')
             let data = await responce.json();
                         Object.keys(data.message).forEach(function (element) {
@@ -75,21 +73,23 @@
                 option.textContent = element;
                 option.value = element;
                 select.append(option);
+
             });
-            select.addEventListener("click", async function(){
+            getImg()
+        }
+            load()
+            select.addEventListener("click" , getImg);
+         async function getImg(){
             let search = select.value;
              let responceI = await fetch('https://dog.ceo/api/breed/'+search+'/images/random/5')
              let dataI = await responceI.json()
              dataI.message.map((element, index) => {
                 let img = document.querySelectorAll('img');
                 img[index].src = element;
-             }
-             )
-            })
+             })
          }
-        load()
 
-
+        
     </script>
 </body>
 
