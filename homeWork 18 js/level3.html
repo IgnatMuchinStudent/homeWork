@@ -27,22 +27,32 @@
 
     .img-0 {
         grid-area: img0;
+        width: 410px;
+        height: 460px;
     }
 
     .img-1 {
+        width: 200px;
+        height: 366px;
         grid-area: img1;
     }
 
     .img-2 {
+        width: 410px;
+        height: 460px;
         grid-area: img2;
     }
 
     .img-3 {
         grid-area: img3;
+        width: 410px;
+        height: 460px;
     }
 
     .img-4 {
         grid-area: img4;
+        width: 610px;
+        height: 360px;
     }
 </style>
 
@@ -59,23 +69,23 @@
             let select = document.querySelector('select')
             let responce = await fetch('https://dog.ceo/api/breeds/list/all')
             let data = await responce.json();
-                        console.log(Array.from(data.message))
-            data.message.forEach(function (element) {
+                        Object.keys(data.message).forEach(function (element) {
                 console.log(element)
                 let option = document.createElement('option')
                 option.textContent = element;
                 option.value = element;
                 select.append(option);
             });
+            select.addEventListener("click", async function(){
             let search = select.value;
              let responceI = await fetch('https://dog.ceo/api/breed/'+search+'/images/random/5')
              let dataI = await responceI.json()
-             console.log(dataI)
              dataI.message.map((element, index) => {
                 let img = document.querySelectorAll('img');
                 img[index].src = element;
              }
              )
+            })
          }
         load()
 
